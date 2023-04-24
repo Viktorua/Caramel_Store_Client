@@ -1,0 +1,45 @@
+.catalog {
+    padding-top: 40px;
+}
+
+.catalog__header {
+    height: 624px;
+    background-image: url(../../images/catalog_bg.svg);
+    background-size: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.catalog__header__text {
+    width: 100%;
+    height: 135px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 100px;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.77);
+}
+
+.categories__list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 28px;
+} 
+
+.category-item {
+    list-style-type: none;
+    cursor: pointer;
+}
+
+.category-item:hover {
+    text-decoration: underline;
+}
+
+.category-item__text-active {
+    font-weight: bold;
+    text-decoration: underline;
+}

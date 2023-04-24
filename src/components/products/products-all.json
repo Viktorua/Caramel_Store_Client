@@ -1,0 +1,48 @@
+{
+    "products" : [
+        {
+            "name" : "Классический костюм топ + классические брки + пиджак",
+            "path" : "./images/products_imgs/all/product1.svg",
+            "money" : "rub",
+            "price" : "10200",
+            "dimentions" : [
+                42,
+                44,
+                46
+            ]
+        }, 
+        {
+            "name" : "Платье женское с запахом и квадратным декольте ",
+            "path" : "./images/products_imgs/all/product2.svg",
+            "money" : "rub",
+            "price" : "7200",
+            "dimentions" : [
+                42,
+                44,
+                46
+            ]
+        },
+        {
+            "name" : "Женский комбинезон с широкими штанами",
+            "path" : "./images/products_imgs/all/product3.svg",
+            "money" : "rub",
+            "price" : "5800",
+            "dimentions" : [
+                42,
+                44,
+                46,
+                48
+            ]
+        },
+        {
+            "name" : "Костюм топ + юбка",
+            "path" : "./images/products_imgs/all/product4.svg",
+            "money" : "rub",
+            "price" : "9800",
+            "dimentions" : [
+                44,
+                46
+            ]
+        }
+    ]
+}
