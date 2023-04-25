@@ -32,7 +32,6 @@ const Header = observer(() => {
                     <span onClick={()=>changeRoute('Admin')}>
                         ADMIN
                     </span>
-
                 </li>
                 <li className={'li_shop'}>
                     <span onClick={()=>changeRoute('shop')}>

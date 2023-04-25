@@ -47,13 +47,13 @@ const urls = [
             isActive: false 
         }
     },
-    {
+   /* {
         url: 'shop/underwear', 
         properties: {
             text: 'Нижнее бельё',
             isActive: false
         }
-    }
+    }*/
 
 ]
 

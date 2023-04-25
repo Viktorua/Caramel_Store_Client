@@ -10,6 +10,7 @@ import MainPage from "./pages/MainPage";
 import Admin from "./pages/Admin";
 import AuthPage from "./pages/AuthPage";
 import AboutPage from "./pages/AboutPage";
+import Basket from "./pages/Basket";
 import ContactsPage from "./pages/ContactsPage";
 import CatalogPage from "./pages/CatalogPage";
 import MePage from "./pages/MePage";
@@ -25,9 +26,8 @@ const App = observer(() => {
             <Route path={'/Admin'} element={<Admin/>}/>   
             <Route path={'/about'} element={<AboutPage/>}/>
             <Route path={'/contacts'} element={<ContactsPage/>}/>
-            <Route path={'/basket'} element={<div>
-
-            </div>}/>
+            <Route path={'/Basket'} element={<Basket/>}/>
+            
             <Route path={'/me'} element={<MePage/>}/>
             <Route path={'/login'} element={<AuthPage path='login'/>}/>          
             <Route path={'/register'} element={<AuthPage path='register'/>}/>
