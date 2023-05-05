@@ -1,9 +1,8 @@
 .start {
-    margin-top: 50px;
+    margin-top: 250px;
     margin-left: 50px;
     text-align: center;
+    font-size: 45px;
+    width: 20%
 }
 
-.start {
-    font-size: 25px;
-}

@@ -1,7 +1,8 @@
 .basket-page {
-    margin-left: 20px;
+    margin-left: 500px;
     font-size: 30px;
-    width: 19%;
+    width: 22%;
+    padding-top: 250px;
     text-align: center;
     
 }
@@ -9,15 +10,15 @@
 .bas {
     padding-top: 250px;
     font-size: 20px;
-    margin-left: 500px;
-    font-size: 30px;
+    margin-left: 35px;
+    font-size: 25px;
     width: 19%;
     text-align: center;
 }
 
-ul {
-    font-size: 25px;
-    width: 100%;
-    text-align: center;
+.butt {
+    font-size: 20px;
+    width: 90%;
+    padding-top: 10px;
 
 }

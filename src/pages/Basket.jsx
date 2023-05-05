@@ -19,14 +19,14 @@ export default function Basket() {
     }   
         return (
             <Container>
-                <ul className={'bas'}>
+                <ul className={'basket-page'}>
                     <b>
                         Корзина пуста
                     </b>
                 </ul>
-                <Button className={'ul'} variant="btn btn-dark" 
+                <Button className={'bas'} variant="btn btn-dark" 
                 onClick={() => {changeRoute("shop") }}>
-                    <ul>
+                    <ul className={'butt'}>
                     Начать шоппинг
                     </ul>
                 </Button>

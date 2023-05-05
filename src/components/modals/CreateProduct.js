@@ -17,10 +17,22 @@ const CreateProduct = ({show, onHide}) =>{
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-            <Form>
-                <Form.Control
-                    placeholder={"Введите название типа"}
-                />
+            <Form>            
+          <Form.Select aria-label="Default select example">
+          <option>Выбери тип товара</option>
+          <option value="1">Юбки</option>
+          <option value="2">Платья</option>
+          <option value="3">Брюки</option>
+          <option value="4">Обувь</option>
+          <option value="5">Спортивная одежда</option>
+        </Form.Select> 
+        <Form>
+            <Form.Control
+                value={value}
+                onChange={e => setValue(e.target.value)}
+                placeholder={"Введите название типа"}
+            />
+        </Form>
             </Form>
         </Modal.Body>
         <Modal.Footer>
