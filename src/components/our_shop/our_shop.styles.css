@@ -1,5 +1,6 @@
 .header-text {
     font-size: 42px ;
+    margin-top: 30px;
 }
 
 .fashion {
@@ -73,10 +74,12 @@
 .to-catalog__text {
     font-size: 20px;
     text-decoration: underline;
-    width: 10%;
+    width: 13%;
     cursor: pointer;
+    margin-top: 15px;
 }
 
 .to-catalog__img {
     padding-top: 5px;
 }
+

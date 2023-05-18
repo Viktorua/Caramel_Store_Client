@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from 'react';
 import Slider from "react-slick";
 
-import {BsArrowLeft, BsArrowRight,} from 'react-icons/bs';
 
 import styles from './my_slider.styles.css'
 
@@ -36,13 +35,9 @@ function SamplePrevArrow({onClick}) {
         </div>
     );
 }
-function EmptyArrow({onClick}) {
-    return (
-        <div></div>
-    );
-}
 
 export default function MySlider () {
+    
 
     const [slideIndex, setSlideIndex] = useState(0);
 

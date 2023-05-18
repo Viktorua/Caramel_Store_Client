@@ -4,13 +4,10 @@ import fashion from '../../images/fashion.svg'
 import style from '../../images/style.svg'
 import taste from '../../images/taste.svg'
 import sales from '../../images/sales.svg'
-import line1 from '../../images/lines_fashion/line1.svg'
-import line2 from '../../images/lines_fashion/line2.svg'
-import line3 from '../../images/lines_fashion/line3.svg'
-import line4 from '../../images/lines_fashion/line4.svg'
 
 import arrow from '../../images/arrow.svg'
 import MySlider from '../my_slider/MySlider'
+import MySlider2 from '../my_slider/MySlider2'
 import {useNavigate} from "react-router";
 
 const OurShop = () => {
@@ -77,6 +74,10 @@ const OurShop = () => {
                 </p>
                 <img src={arrow} alt="" className={'to-catalog__img'}/>
             </div>
+            <p className={'header-text'}>
+                    Отзывы
+                </p>
+            <MySlider2/>
         </div>
     )
 }

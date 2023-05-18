@@ -8,7 +8,7 @@ export default function ContactsPage () {
             <p style={{fontSize : '25px', paddingLeft : '20px'}}>КОНТАКТЫ:</p>
             <ul className='ul'>
                 <li className='item'>
-                    Телефон службы поддержки: 8-918-857-308-81
+                    Телефон службы поддержки: 8-918-857-38-81
                 </li>
                 <li className='item'>
                     Звонок по России бесплатный ежедневно с 00:00 до 23:59 по московскому времени.

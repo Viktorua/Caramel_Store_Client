@@ -42,6 +42,7 @@ body {
 .li_shop:hover {
     text-decoration: underline ;
     cursor: pointer;
+    height: 1000%;
 }
 
 .li_about:hover {

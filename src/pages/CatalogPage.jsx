@@ -1,14 +1,12 @@
-import React from 'react'
+import React from "react";
 
-import Catalog from '../components/catalog/Catalog'
-import Products from '../components/products/Products'
+import Catalog from "../components/catalog/Catalog";
+import { urls } from "../consts";
 
-export default function CatalogPage(props) {
-
-    return (
-        <div className={'catalog-page'}>
-            <Catalog/>
-            <Products type={props.type}/>
-        </div>
-    )
+export default function CatalogPage({ data = [] }) {
+  return (
+    <div className={"catalog-page"}>
+      <Catalog urls={urls} data={data} />
+    </div>
+  );
 }

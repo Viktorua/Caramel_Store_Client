@@ -1,110 +1,72 @@
-import React, {useState} from "react";
-import {useNavigate} from 'react-router'
+import { useNavigate } from "react-router";
 
-import './catalog.styles.css'
+import { Button, Container, Row, Col } from "react-bootstrap";
+import "./catalog.styles.css";
+import TypeBar from "../TypeBar";
+import ButtonsGrop from "./ButtonsGrop";
+import Products from "../products/Products";
 
-const urls = [
-    {
-        url: 'shop' ,
-        properties: {
-            text : 'Все категории',
-            isActive: true
-        }
-        
-    },
-    {
-        url: 'shop/skirts' ,
-        properties: {
-            text : 'Юбки',
-            isActive: false 
-       }
-    },
-    {
-        url: 'shop/dresses', 
-        properties: {
-            text: 'Платья',
-            isActive: false
-        }
-    },
-    {
-        url : 'shop/pants', 
-        properties: {
-            text: 'Брюки',
-            isActive: false
-        }
-    },
-    {
-        url: 'shop/shoes',  
-        properties : { 
-            text: 'Обувь',
-            isActive: false
-        }
-    },
-    {
-        url: 'shop/sportswear',
-        properties: {
-            text: 'Спортивная одежда',
-            isActive: false 
-        }
-    },
-   /* {
-        url: 'shop/underwear', 
-        properties: {
-            text: 'Нижнее бельё',
-            isActive: false
-        }
-    }*/
+export default function Catalog(props) {
+  // получение товара из бэка
 
-]
+  const { urls, data = [] } = props;
+  const navigate = useNavigate();
 
+  const changeRoute = (url) => {
+    if (url) {
+      navigate(`/${url}`);
+    } else {
+      navigate("/");
+    }
+  };
 
-export default function Catalog() {
-
-    const navigate = useNavigate();
-
-
-    const changeRoute = (url) => {
-        if (url) {
-            navigate(`/${url}`)
-        }
-        else {
-            navigate('/')
-        }
-    }   
-
-    return (
-        <div className={'catalog'}>
-            <div className={'catalog__header'}>
-                <div className={'catalog__header__text'}>Каталог</div>
-            </div>
-            <div className={'categories'}>
-                <ul className={'categories__list'}>
-                    {
-                        urls.map((value, index) => {
-                            return (
-                                <li className={'category-item'}>
-                                    <span className={value.properties.isActive === true ? 
-                                        'category-item__text category-item__text-active' : 
-                                        'category-item__text'} 
-                                        onClick={() => {
-                                            urls.forEach((elem, idx) => {
-                                                if (idx === index) {
-                                                    elem.properties.isActive = true
-                                                }
-                                                else {
-                                                    elem.properties.isActive = false
-                                                }
-                                            })
-                                            changeRoute(value.url)
-                                        }}>
-                                            {value.properties.text}
-                                    </span>
-                                </li>
-                            )
-                        }) 
+  return (
+    <div className={"catalog"}>
+      <div className={"catalog__header"}>
+        <div className={"catalog__header__text"}>Каталог</div>
+      </div>
+      <div className={"categories"}>
+        <ul className={"categories__list"}>
+          {urls?.length > 0 &&
+            urls.map((value, index) => {
+              return (
+                <li className={"category-item"} key={value.id}>
+                  <span
+                    className={
+                      value.properties.isActive === true
+                        ? "category-item__text category-item__text-active"
+                        : "category-item__text"
                     }
-                </ul>
-            </div>
+                    onClick={() => {
+                      urls.forEach((elem, idx) => {
+                        if (idx === index) {
+                          elem.properties.isActive = true;
+                        } else {
+                          elem.properties.isActive = false;
+                        }
+                      });
+                      changeRoute(value.url);
+                    }}
+                  >
+                    {value.properties.text}
+                  </span>
+                </li>
+              );
+            })}
+        </ul>
+        <div className="ButtonsGrop">
+          <Row className="ButtonsGrop">
+            <ButtonsGrop />
+          </Row>
         </div>
-    )
+
+        <Container>
+          <Row className="TypeBar">
+            <TypeBar />
+          </Row>
+          <Products data={data} />
+        </Container>
+      </div>
+    </div>
+  );
 }

@@ -31,28 +31,6 @@ const MePage = observer(() => {
             <div className='user-data'>
                 
             </div>
-
-            <div className='admin-panel'>
-                <span className='panel-title'>Административная панель</span>
-                <form action="" className='admin-form'>
-                    <select name="types" id="" className='admin-select'>
-                        <option value="all">Все категории</option>
-                        <option value="skirt">Юбки</option>
-                        <option value="dresses">Платья</option>
-                        <option value="pants">Брюки</option>
-                        <option value="shoes">Обувь</option>
-                        <option value="sportswear">Спортивная одежда</option>
-                        <option value="underwear">Нижнее бельё</option>
-                    </select>
-                    <input type="text" placeholder='Название...' className='inpt'/>
-                    <input type="text" placeholder='Описание...' className='inpt'/>
-                    <input type="text" placeholder='Цена...' className='inpt'/>
-                    <input type="text" placeholder='Размер...' className='inpt'/>
-                    <input type="file"/>          
-                </form>
-
-                <button>Добавить товар</button>
-            </div>
         </div>
     )
 })

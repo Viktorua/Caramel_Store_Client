@@ -20,4 +20,7 @@ export default class UserStore {
     get user() {
         return this._user
     }
+    get role() {
+        return this._user.role
+    }
 }

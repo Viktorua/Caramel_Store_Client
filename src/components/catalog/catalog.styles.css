@@ -3,7 +3,7 @@
 }
 
 .catalog__header {
-    height: 624px;
+    height: 470px;
     background-image: url(../../images/catalog_bg.svg);
     background-size: 100%;
     display: flex;
@@ -42,4 +42,29 @@
 .category-item__text-active {
     font-weight: bold;
     text-decoration: underline;
+
+}
+
+.TypeBar {
+    padding-top: 30px;
+    margin-left: -70px;
+    align-items: left;
+    z-index: 1;
+    width: 16%;
+
+}
+
+.ButtonsGrop {
+    /* margin-left: -50px;
+    padding-top: 4px;
+    align-items: right;
+    z-index: 1;
+    width: 6%; */
+    padding-top: 10px;
+    margin-left: 100px;
+    align-items: center;
+    z-index: 1;
+    width: 5%;
+color: aliceblue;
+
 }

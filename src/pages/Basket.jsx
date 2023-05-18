@@ -1,35 +1,54 @@
-import React from 'react';
-import './basket.css'
-import {Button, Container} from "react-bootstrap";
-import { useEffect, useState } from "react";
-import {useNavigate} from 'react-router'
+import React from "react";
+import "./basket.css";
+import { useNavigate } from "react-router";
+import { CartProduct } from "../components/products/Products";
+import { useContext } from "react";
+import { Context } from "..";
+import { toJS } from "mobx";
+import { useEffect } from "react";
+import axios from "axios";
+
+const data = [
+  {
+    color: "зелёный",
+    createdAt: "2023-05-15T14:36:31.000Z",
+    description: "дюддд тттт ииии мммм сссссс,dxdxdddszzd",
+    id: 64,
+    img: "6.1.jpg",
+    name: null,
+    price: 800,
+    size: 56,
+    style: "Повседневная",
+    type: "Юбки",
+    updatedAt: "2023-05-15T14:36:31.000Z",
+  },
+];
 
 export default function Basket() {
-    const[typeVisible, setTypeVisible] = useState(false)
+  const { basket } = useContext(Context);
+  const { user } = useContext(Context);
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const changeRoute = (url) => {
-        if (url) {
-            navigate(`/${url}`)
-        }
-        else {
-            navigate('/')
-        }
-    }   
-        return (
-            <Container>
-                <ul className={'basket-page'}>
-                    <b>
-                        Корзина пуста
-                    </b>
-                </ul>
-                <Button className={'bas'} variant="btn btn-dark" 
-                onClick={() => {changeRoute("shop") }}>
-                    <ul className={'butt'}>
-                    Начать шоппинг
-                    </ul>
-                </Button>
-        </Container>
-        )
+  const changeRoute = (url) => {
+    if (url) {
+      navigate(`/${url}`);
+    } else {
+      navigate("/");
+    }
+  };
+
+  const fetchBasket = async () => {
+    const { data } = await axios.get("http://localhost:5000/api/basket/", {
+      userId: user._user.id,
+    });
+
+    console.log(data);
+  };
+
+  useEffect(() => {
+    fetchBasket();
+  }, []);
+
+  return <CartProduct data={basket._basket} />;
 }
