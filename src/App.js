@@ -11,6 +11,7 @@ import { Container, Row } from "react-bootstrap";
 import MainPage from "./pages/MainPage";
 import Admin from "./pages/Admin";
 import Pay from "./pages/Pay";
+import PayMore from "./pages/PayMore";
 import AuthPage from "./pages/AuthPage";
 import AboutPage from "./pages/AboutPage";
 import Basket from "./pages/Basket";
@@ -53,6 +54,7 @@ const App = observer(() => {
         <Route path={"/"} element={<MainPage />} />
         <Route path={"/Admin"} element={<Admin />} />
         <Route path={"/Pay"} element={<Pay />} />
+        <Route path={"/PayMore"} element={<PayMore />} />
         <Route path={"/More/:id"} element={<More data={data} />} />
         <Route path={"/about"} element={<AboutPage />} />
         <Route path={"/contacts"} element={<ContactsPage />} />

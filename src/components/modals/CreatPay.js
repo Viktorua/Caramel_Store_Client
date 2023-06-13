@@ -6,6 +6,7 @@ import instance from "../Instance";
 //import App from '../modals/Choice'
 import "./creatpay.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const CreatePay = ({ show, onHide }) => {
   const [name, setName] = useState("");
@@ -13,6 +14,7 @@ const CreatePay = ({ show, onHide }) => {
   const [telephone, setTelephone] = useState("");
   const [city, setCity] = useState("");
   const [address, setAddress] = useState();
+  const navigate = useNavigate();
 
   const handleAdd = async () => {
     try {
@@ -30,12 +32,14 @@ const CreatePay = ({ show, onHide }) => {
       onHide();
     }
   };
-
+  const PayMore = () => {
+    navigate("/PayMore");
+  };
   return (
     <Modal size="lg" show={show} onHide={onHide} centered>
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Детали оплаты
+          Заполните данные для заказа
         </Modal.Title>
       </Modal.Header>
       <Modal.Title id="contained-modal-title-vcenter" className="create">
@@ -81,7 +85,7 @@ const CreatePay = ({ show, onHide }) => {
         <Button variant="outline-danger" onClick={onHide}>
           Закрыть
         </Button>
-        <Button variant="outline-success" onClick={handleAdd}>
+        <Button variant="outline-success" onClick={() => PayMore()}>
           Добавить
         </Button>
       </Modal.Footer>

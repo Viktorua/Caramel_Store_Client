@@ -26,7 +26,6 @@ export const ProductsContent = observer(({ param }) => {
   const isAdmin = userData?.role === "admin";
 
   const isButtonDisabled = pathname.includes("basket");
-  const isButtonMore = pathname.includes("More");
   const textForBasket = userData?.role ? "В корзину" : "Авторизоваться";
   const isUser = !!userData?.role;
 
@@ -44,7 +43,19 @@ export const ProductsContent = observer(({ param }) => {
       _user: { id: user_id },
     } = user;
 
-    const { type, description, size, price, img, style, color, id } = param;
+    const {
+      type,
+      description,
+      size,
+      price,
+      img,
+      style,
+      color,
+      production,
+      textile,
+      count,
+      id,
+    } = param;
 
     // запрос на сохранения товара в баскет по id
     try {
@@ -56,7 +67,10 @@ export const ProductsContent = observer(({ param }) => {
       formData.append("price", price);
       formData.append("style", style);
       formData.append("color", color);
+      formData.append("production", production);
+      formData.append("textile", textile);
       formData.append("userId", user_id);
+      formData.append("count", count);
       formData.append("clotheId", id);
 
       const { data } = await axios.post(
@@ -69,7 +83,9 @@ export const ProductsContent = observer(({ param }) => {
           img,
           style,
           color,
-          // image: img,
+          production,
+          textile,
+          count,
           userId: user_id,
           clotheId: id,
         }

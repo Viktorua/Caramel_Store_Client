@@ -13,10 +13,14 @@ const CreateProduct = ({ show, onHide }) => {
   const [type, setType] = useState("");
   const [size, setSize] = useState();
   const [price, setPrice] = useState();
+  const [production, setProduction] = useState();
+  const [textile, setTextile] = useState();
+  const [count, setCount] = useState();
   const [selectedFile, setSelectedFile] = useState(null);
 
   const handleUploadImage = (event) => {
     setSelectedFile(event.target.files[0]);
+    onHide();
   };
 
   const handleAddProduct = async () => {
@@ -29,6 +33,9 @@ const CreateProduct = ({ show, onHide }) => {
       formData.append("price", price);
       formData.append("style", style);
       formData.append("color", color);
+      formData.append("production", production);
+      formData.append("textile", textile);
+      formData.append("count", count);
 
       await instance.post("clothes", formData, {
         headers: {
@@ -118,6 +125,24 @@ const CreateProduct = ({ show, onHide }) => {
             onChange={(e) => setPrice(Number(e.target.value))}
             placeholder="Введите стоимость товара"
             type="number"
+          />
+          <Form.Control
+            className={"product"}
+            value={production}
+            onChange={(e) => setProduction(e.target.value)}
+            placeholder={"Введите страну производства"}
+          />
+          <Form.Control
+            className={"product"}
+            value={textile}
+            onChange={(e) => setTextile(e.target.value)}
+            placeholder={"Введите тип ткани"}
+          />
+          <Form.Control
+            className={"product"}
+            value={count}
+            onChange={(e) => setCount(e.target.value)}
+            placeholder={"Введите количество товара"}
           />
 
           <Button className={"img"} variant={"btn btn-dark"}>

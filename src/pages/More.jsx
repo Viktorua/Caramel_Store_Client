@@ -4,6 +4,7 @@ import { useParams, useNavigate } from "react-router";
 import { observer } from "mobx-react-lite";
 import { CardDetails } from "../components/card_details/CardDetails";
 import ArrowBack from "../images/ArrowBack.svg";
+import "./more.css";
 
 export const More = observer(({ data = [] }) => {
   const { id } = useParams();
@@ -23,7 +24,12 @@ export const More = observer(({ data = [] }) => {
   return (
     //отрисовка карточки в "подробнее"
     <div style={{ display: "flex" }}>
-      <img src={ArrowBack} alt="ArrowBack" onClick={handleClickBack} />
+      <img
+        className="callBack"
+        src={ArrowBack}
+        alt="ArrowBack"
+        onClick={handleClickBack}
+      />
       <div
         style={{
           display: "flow",
